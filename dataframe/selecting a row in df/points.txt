@@ -1,0 +1,2 @@
+iloc = searches using index position
+loc = searches using index label
