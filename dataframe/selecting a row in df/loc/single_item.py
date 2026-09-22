@@ -9,5 +9,5 @@ student_dict={
 }
 
 a=pd.DataFrame(student_dict)
-print(a.set_index("name"))
-print(a.loc['nitish'])
+b=a.set_index("name")
+print(b.loc['nitish'])
