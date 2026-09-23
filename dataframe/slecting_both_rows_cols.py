@@ -13,4 +13,5 @@ student_dict={
 
 a=pd.DataFrame(student_dict)
 b=a.set_index("name")
-print(a.iloc[0:3,0:3])
+print(b.iloc[0:3,0:3])
+print(b.loc['nitish':'abhay','iq':'marks'])
