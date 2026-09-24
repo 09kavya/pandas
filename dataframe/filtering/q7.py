@@ -1,0 +1,1 @@
+#write a function that can return the track record of 2 teams aginst each other
