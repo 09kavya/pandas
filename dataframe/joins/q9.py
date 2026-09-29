@@ -1,8 +1,4 @@
-# 6. find course that got no enrollment
-# courses['course_id']
-# regs['course_id']
-
-import numpy as np
+# 9. find top 3 students who did most number enrollmentsimport numpy as np
 import pandas as pd
 
 courses=pd.read_csv(r"C:\Users\Lenovo\Downloads\courses.csv")
@@ -12,6 +8,5 @@ students=pd.read_csv(r"C:\Users\Lenovo\Downloads\students.csv")
 
 a=pd.concat([regs,reg],ignore_index=True)
 
-temp=np.setdiff1d(courses['course_id'],a['course_id'])
-b=courses[courses['course_id'].isin(temp)]
-print(b)
+temp=a.merge(students,on='student_id').groupby(['student_id','name'])['name'].count().sort_values(ascending=False).head(3)
+print(temp)

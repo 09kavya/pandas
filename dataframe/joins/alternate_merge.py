@@ -1,0 +1,10 @@
+import numpy as np
+import pandas as pd
+
+
+students=pd.read_csv(r"C:\Users\Lenovo\Downloads\students.csv")
+
+
+
+temp=pd.merge(students,students,how='inner',left_on='partner',right_on='student_id')
+print(temp)

@@ -1,6 +1,4 @@
-# 6. find course that got no enrollment
-# courses['course_id']
-# regs['course_id']
+# 8. Print student name -> partner name for all enrolled students
 
 import numpy as np
 import pandas as pd
@@ -12,6 +10,5 @@ students=pd.read_csv(r"C:\Users\Lenovo\Downloads\students.csv")
 
 a=pd.concat([regs,reg],ignore_index=True)
 
-temp=np.setdiff1d(courses['course_id'],a['course_id'])
-b=courses[courses['course_id'].isin(temp)]
-print(b)
+temp=students.merge(students,how="inner",left_on='partner',right_on='student_id')[['name_x','name_y']]
+print(temp)
