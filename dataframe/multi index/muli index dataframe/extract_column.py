@@ -13,4 +13,4 @@ b=pd.DataFrame([
     [6, 7, 4, 3],
     [8, 9, 6, 4]
 ],index=a,columns=pd.MultiIndex.from_product([['delhi','mumbai'],['Avg_package','students']]))
-print(b.loc[('cse',2022)])
+print(b['delhi']['students'])
